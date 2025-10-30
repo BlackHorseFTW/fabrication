@@ -12,15 +12,23 @@ const contactSchema = z.object({
   projectDescription: z.string().min(10, "Please provide more details about your project"),
 });
 
+interface ContactFormData {
+  fullName: string;
+  email: string;
+  company?: string;
+  phone?: string;
+  projectDescription: string;
+}
+
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
+    const body = await request.json() as unknown;
     
     // Validate the request body
-    const validatedData = contactSchema.parse(body);
+    const validatedData = contactSchema.parse(body) as ContactFormData;
 
     // TODO: Replace with your actual email address
-    const recipientEmail = process.env.CONTACT_EMAIL || "your-email@example.com";
+    const recipientEmail = process.env.CONTACT_EMAIL ?? "your-email@example.com";
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
@@ -37,12 +45,11 @@ export async function POST(request: Request) {
             <h3 style="color: #1f2937; margin-bottom: 10px;">Contact Information</h3>
             <p><strong>Full Name:</strong> ${validatedData.fullName}</p>
             <p><strong>Email:</strong> ${validatedData.email}</p>
+            <p><strong>Project Description:</strong><br>${validatedData.projectDescription}</p>
             ${validatedData.company ? `<p><strong>Company:</strong> ${validatedData.company}</p>` : ""}
             ${validatedData.phone ? `<p><strong>Phone:</strong> ${validatedData.phone}</p>` : ""}
           </div>
 
-          <div style="margin: 20px 0; padding: 15px; background-color: #f3f4f6; border-radius: 8px;">
-            <h3 style="color: #1f2937; margin-bottom: 10px;">Project Description</h3>
             <p style="white-space: pre-wrap;">${validatedData.projectDescription}</p>
           </div>
 
