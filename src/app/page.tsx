@@ -565,7 +565,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
-                      <p className="text-gray-600">(555) 123-4567</p>
+                      <p className="text-gray-600">(+91)-7989254795</p>
                       <p className="text-sm text-gray-500 mt-1"></p>
                     </div>
                   </div>
@@ -579,25 +579,13 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-                      <p className="text-gray-600">info@fabricationworks.com</p>
+                      <p className="text-gray-600">srivaraahifabrications@gmail.com</p>
                       <p className="text-sm text-gray-500 mt-1"></p>
                     </div>
                   </div>
 
                   {/* Location */}
-                  <div className="flex items-start gap-4 p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
-                    <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center shrink-0">
-                      <svg className="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Location</h4>
-                      <p className="text-gray-600">123 Industrial Drive</p>
-                      <p className="text-gray-600">Manufacturing District, ST 12345</p>
-                    </div>
-                  </div>
+                 
                 </div>
               </div>
             </div>
